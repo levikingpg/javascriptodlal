@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Az Apple története</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header p {
+            margin-top: 5px;
+            color: #ccc;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .kartya {
+            background-color: white;
+            border: 2px solid #999999;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .evszam {
+            background-color: #333333;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .cim {
+            font-size: 20px;
+            color: #222222;
+            margin: 5px 0 10px 0;
+        }
+
+        .leiras {
+            color: #444444;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .kep-helye {
+            width: 100%;
+            height: 200px;
+            background-color: #cccccc;
+            border: 1px dashed #666666;
+            text-align: center;
+            line-height: 200px;
+            color: #333333;
+            font-weight: bold;
+        }
+
+        .kep-helye img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #333333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Az Apple története</h1>
+       
+    </header>
+
+    <div class="container" id="tartalom"></div>
+
+    <footer>
+        <p>Készítette:Ötvös Levente- 2026</p>
+    </footer>
+
+    <script>
+       
+        const adatbazis = [
+            {
+                ev: "1976",
+                cim: "Apple I és a kezdetek",
+                leiras: "Steve Jobs és Steve Wozniak megalapítják az Apple céget a garázsban. Elkészítik az első Apple I nevű számítógépet.",
+                kep: ""
+            },
+            {
+                ev: "1984",
+                cim: "Macintosh 128K",
+                leiras: "Megjelenik az első Macintosh számítógép. Ez volt az egyik első gép, ami egeret és grafikus felületet használt.",
+                kep: ""
+            },
+            {
+                ev: "1997",
+                cim: "Steve Jobs visszatér",
+                leiras: "Jobs visszatér az Apple-höz, és átveszi a cég vezetését. Megmenti a céget a csődtől.",
+                kep: ""
+            },
+            {
+                ev: "2001",
+                cim: "Az iPod bemutatása",
+                leiras: "Bemutatják az iPod zenelejátszót. Nagyon sok zenét lehetett rátenni és kicsi volt.",
+                kep: ""
+            },
+            {
+                ev: "2007",
+                cim: "Az első iPhone",
+                leiras: "Steve Jobs bemutatja az első iPhone okostelefont. Ezzel megváltozott a mobiltelefonok világa.",
+                kep: ""
+            },
+            {
+                ev: "2010",
+                cim: "Az iPad megjelenése",
+                leiras: "Megjelenik az első iPad táblagép, ami a telefon és a laptop közötti eszköz lett.",
+                kep: ""
+            }
+        ];
+
+        
+        const tartalomDiv = document.getElementById("tartalom");
+
+        tartalomDiv.innerHTML = adatbazis.map(elem => `
+            <div class="kartya">
+                <div class="evszam">${elem.ev}</div>
+                <div class="cim">${elem.cim}</div>
+                <div class="leiras">${elem.leiras}</div>
+                <div class="kep-helye">
+                    ${elem.kep !== "" ? `<img src="${elem.kep}" alt="${elem.cim}">` : `Kép helye: ${elem.cim}`}
+                </div>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>
